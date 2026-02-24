@@ -1,4 +1,11 @@
 
+## [1.0.3] - 24th February 2026
+
+Migrated package and example app to null safety for Dart 3 compatibility.
+Updated Flutter and Dart SDK constraints in `pubspec.yaml` files.
+Modernized deprecated Flutter API usage in the slider implementation and example app.
+Refreshed dependencies in `pubspec.lock`.
+
 ## [1.0.2] - 27th september 2019
 
 Added `mapValueToString` property.
@@ -22,5 +29,4 @@ The fluid slider will be disabled if [onChanged] is null.
 
 By default, a fluid slider will be as wide as possible, with a height of 60.0. When
 given unbounded constraints, it will attempt to make itself 200.0 wide.
-
 
