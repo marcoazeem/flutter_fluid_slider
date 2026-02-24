@@ -1,22 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_fluid_slider/flutter_fluid_slider.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: HomePage(),
     );
   }
 }
 
 class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
   @override
-  HomePageState createState() {
-    return new HomePageState();
-  }
+  State<HomePage> createState() => HomePageState();
 }
 
 class HomePageState extends State<HomePage> {
@@ -43,9 +45,7 @@ class HomePageState extends State<HomePage> {
               min: 0.0,
               max: 100.0,
             ),
-            SizedBox(
-              height: 100.0,
-            ),
+            const SizedBox(height: 100.0),
             FluidSlider(
               value: _value2,
               onChanged: (double newValue) {
@@ -57,32 +57,37 @@ class HomePageState extends State<HomePage> {
               max: 500.0,
               sliderColor: Colors.redAccent,
               thumbColor: Colors.amber,
-              start: Icon(
+              start: const Icon(
                 Icons.money_off,
                 color: Colors.white,
               ),
-              end: Icon(
+              end: const Icon(
                 Icons.attach_money,
                 color: Colors.white,
               ),
             ),
-            SizedBox(
-              height: 100.0,
-            ),
+            const SizedBox(height: 100.0),
             FluidSlider(
-                value: _value3,
-                sliderColor: Colors.purple,
-                onChanged: (double newValue) {
-                  setState(() {
-                    _value3 = newValue;
-                  });
-                },
-                min: 1.0,
-                max: 5.0,
-                mapValueToString: (double value) {
-                  List<String> romanNumerals = ['I', 'II', 'III', 'IV', 'V'];
-                  return romanNumerals[value.toInt() - 1];
-                }),
+              value: _value3,
+              sliderColor: Colors.purple,
+              onChanged: (double newValue) {
+                setState(() {
+                  _value3 = newValue;
+                });
+              },
+              min: 1.0,
+              max: 5.0,
+              mapValueToString: (double value) {
+                const List<String> romanNumerals = <String>[
+                  'I',
+                  'II',
+                  'III',
+                  'IV',
+                  'V',
+                ];
+                return romanNumerals[value.toInt() - 1];
+              },
+            ),
           ],
         ),
       ),
